@@ -240,4 +240,45 @@ public class PhoneDao {
 		this.close();
 		return list;
 	}
+	
+	public PersonVo getPerson(int personId) {
+		
+		PersonVo pvo = null;
+		this.getConnection();
+		
+		try {
+	         /*****************************
+	          3. SQL문 준비 / 바인딩 / 실행
+	         ******************************/
+			String query = "";
+			query += " select person_id, name, hp, company ";
+			query += " from person ";
+			query += " where person_id=? ";
+			
+			pstmt = conn.prepareStatement(query);
+			
+			pstmt.setInt(1, personId);
+			
+			rs = pstmt.executeQuery();
+			
+	         /******************
+	         4.결과처리
+	         *******************/
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String hp = rs.getString(3);
+				String company = rs.getString(4);
+				
+				pvo = new PersonVo(id, name, hp, company);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		this.close();
+		
+		return pvo;
+	}
 }

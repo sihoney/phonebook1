@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ page import="java.util.List" %>    
 <%@ page import="com.javaex.dao.PhoneDao" %>
 <%@ page import="com.javaex.vo.PersonVo" %>  
@@ -12,31 +12,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<h1>[phonebook1]</h1>
 	
-	<h2>��ȭ��ȣ ����Ʈ</h2>
+	<h2>전화번호 리스트</h2>
 	
-	<p>�Է��� ���� �����Դϴ�.</p>
+	<p>입력한 정보 내역입니다.</p>
 	
 	<%
 	for(int i = 0; i < list.size(); i++) {
+		String name = list.get(i).getName();
+		String hp = list.get(i).getHp();
+		String company = list.get(i).getCompany();
+		int personId = list.get(i).getPersonId();
 	%>
 		<table border="1">
 			<tr>
-				<td>�̸�(name)</td>
-				<td><%= list.get(i).getName() %></td>
+				<td>이름(name)</td>
+				<td><%= name %></td>
 			</tr>
 			<tr>
-				<td>�ڵ���(hp)</td>
-				<td><%= list.get(i).getHp() %></td>
+				<td>핸드폰(hp)</td>
+				<td><%= hp %></td>
 			</tr>
 			<tr>
-				<td>ȸ��(company)</td>
-				<td><%= list.get(i).getCompany() %></td>
+				<td>회사(company)</td>
+				<td><%= company %></td>
+			</tr>
+			<tr>
+				<td>					
+					<a href="./updateForm.jsp?personId=<%= personId %>">수정</a>
+				</td>
+				<td>
+					<a href="./delete.jsp?personId=<%= personId%>">삭제</a>
+				</td>
 			</tr>
 		</table>
 		<br/>
@@ -44,6 +56,6 @@
 	}
 	%>
 	
-	<a href="http://localhost:8088/phonebook1/writeForm.jsp">��ȭ��ȣ �����</a>
+	<a href="./writeForm.jsp">전화번호 등록폼</a>
 </body>
 </html>
