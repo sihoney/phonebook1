@@ -14,7 +14,7 @@
 	*/
 	
 	PersonVo personVo = new PersonVo(name, hp, company);
-	System.out.println(personVo.toString());
+	
 	PhoneDao phoneDao = new PhoneDao();
 	
 	phoneDao.insertPerson(personVo);

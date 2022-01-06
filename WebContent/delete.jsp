@@ -20,6 +20,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	삭제페이지
+	삭제페이지 입니다.
 </body>
 </html>

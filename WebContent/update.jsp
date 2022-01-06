@@ -25,6 +25,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	수정
+	수정페이지 입니다.
 </body>
 </html>
