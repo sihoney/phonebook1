@@ -1,6 +1,10 @@
 # phonebook1
 ,jsp를 활용한 phonebook
 
+
+* jdbc 꼭 연결하기!
+  * build path & deployment assembly
+---
 ## GET과 POST의 차이
 
 ### HTTP
@@ -28,4 +32,8 @@
   - 서버의 상태나 데이터를 변경시킬 때 사용됩니다.
   - POST는 생성, 수정, 삭제에 사용할 수 있지만, 생성에는 POST, 수정은 PUT OR PATCH, 삭제는 DELETE가 더 용도에 맞는 메소드
   
-  
+---
+## request 객체 메소드
+- getParameter(String param)
+- getParameterValues(String param): 주어진 이름의 파라미터가 갖는 모든 값을 String 타입의 배열로 리턴한다.
+- getParameterNames(): requeast 객체에 포함되어 있는 모든 파라미터의 이름을 Enumeration(열거형) 객체로 리턴한다.
