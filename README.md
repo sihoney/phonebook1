@@ -1,5 +1,5 @@
 # phonebook1
-,jsp를 활용한 phonebook
+html form, jsp를 활용한 phonebook
 
 
 * jdbc 꼭 연결하기!
